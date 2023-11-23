@@ -9,7 +9,7 @@ public class AddressBookSystem {
 
         //taking the input for adding contacts
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please select the option:\n1. Add Contacts\n2. Edit Contact");
+        System.out.println("Please select the option:\n1. Add Contacts\n2. Edit Contact\n3. Delete Contact");
         int optionSelected = sc.nextInt();
         switch (optionSelected) {
             case 1:
@@ -36,6 +36,14 @@ public class AddressBookSystem {
                 System.out.println("Please enter the name you want to edit");
                 String name = sc.nextLine();
                 contactsManager.editContact(name);
+            case 3:
+                System.out.println("Please enter the name you want to delete");
+                String nameToBeDeleted = sc.nextLine();
+                contactsManager.deleteContact(nameToBeDeleted);
+                break;
+
+            default:
+                System.out.println("Invalid Option selected");
         }
 
     }
