@@ -34,10 +34,9 @@ public class ContactsManager {
         System.out.println("Successfully Added to contacts");
     }
 
-    public void editContact(String fName){ //we will edit that contact who have this name
-        //  find the contact in the list
-        for(int index = 0;index<contactsList.size();index++){
-            if(contactsList.get(index).getFirstName().equals(fName)){
+    public void editContact(String fName) {
+        for (int index = 0; index < contactsList.size(); index++) {
+            if (contactsList.get(index).getFirstName().equals(fName)) {
                 //contact is present which user want to edit
                 Scanner sc = new Scanner(System.in);
                 System.out.println("Please enter the updated contact details");
@@ -57,7 +56,7 @@ public class ContactsManager {
                 String state = sc.nextLine();
                 System.out.println("ZIP: ");
                 int zip = sc.nextInt();
-                contactsList.set(index,new Contact(
+                contactsList.set(index, new Contact(
                         firstName,
                         lastName,
                         phone,
@@ -67,11 +66,23 @@ public class ContactsManager {
                         state,
                         zip
                 ));
+
                 System.out.println("The contact against name "+fName+ " has been updated!");
                 return;
             }
         }
         System.out.println("The contact you are looking for is  not present");
+    }
+
+    public void deleteContact(String name) {
+        for (int index = 0; index < contactsList.size();index++){
+            if(contactsList.get(index).getFirstName().equals(name)){
+                contactsList.remove(index);
+                return;
+            }
+        }
+
+        System.out.println("NO contact with the entered name was found!");
     }
 }
 
