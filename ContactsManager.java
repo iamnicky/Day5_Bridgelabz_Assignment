@@ -68,10 +68,10 @@ public class ContactsManager {
                         zip
                 ));
                 System.out.println("The contact against name "+fName+ " has been updated!");
-            }else{
-                System.out.println("The contact you are looking for is  not present");
+                return;
             }
         }
+        System.out.println("The contact you are looking for is  not present");
     }
 }
 
