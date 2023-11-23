@@ -4,11 +4,12 @@ public class AddressBookSystem {
     public static void main(String[] args) {
         System.out.println("Welcome to Address Book");
 
+
         ContactsManager contactsManager = new ContactsManager();
 
         //taking the input for adding contacts
         Scanner sc = new Scanner(System.in);
-        System.out.println("Please select the option:\n1. Add Contacts");
+        System.out.println("Please select the option:\n1. Add Contacts\n2. Edit Contact");
         int optionSelected = sc.nextInt();
         switch (optionSelected) {
             case 1:
@@ -31,6 +32,10 @@ public class AddressBookSystem {
                 int zip = sc.nextInt();
                 contactsManager.addContacts("fName", lName, address, phone, city, state, zip, email);
                 break;
+            case 2:
+                System.out.println("Please enter the name you want to edit");
+                String name = sc.nextLine();
+                contactsManager.editContact(name);
         }
 
     }

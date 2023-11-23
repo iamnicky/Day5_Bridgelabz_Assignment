@@ -1,4 +1,6 @@
+import java.awt.desktop.SystemEventListener;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class ContactsManager {
 
@@ -30,6 +32,46 @@ public class ContactsManager {
                 )
         );
         System.out.println("Successfully Added to contacts");
+    }
+
+    public void editContact(String fName){ //we will edit that contact who have this name
+        //  find the contact in the list
+        for(int index = 0;index<contactsList.size();index++){
+            if(contactsList.get(index).getFirstName().equals(fName)){
+                //contact is present which user want to edit
+                Scanner sc = new Scanner(System.in);
+                System.out.println("Please enter the updated contact details");
+                System.out.println("Firstname: ");
+                String firstName = sc.nextLine();
+                System.out.println("Lastname: ");
+                String lastName = sc.nextLine();
+                System.out.println("Email: ");
+                String email = sc.nextLine();
+                System.out.println("PhoneNumber: ");
+                int phone = sc.nextInt();
+                System.out.println("Address: ");
+                String address = sc.nextLine();
+                System.out.println("City: ");
+                String city = sc.nextLine();
+                System.out.println("State: ");
+                String state = sc.nextLine();
+                System.out.println("ZIP: ");
+                int zip = sc.nextInt();
+                contactsList.set(index,new Contact(
+                        firstName,
+                        lastName,
+                        phone,
+                        email,
+                        address,
+                        city,
+                        state,
+                        zip
+                ));
+                System.out.println("The contact against name "+fName+ " has been updated!");
+            }else{
+                System.out.println("The contact you are looking for is  not present");
+            }
+        }
     }
 }
 
