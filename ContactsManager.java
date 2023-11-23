@@ -4,8 +4,8 @@ public class ContactsManager {
 
     private ArrayList<Contact> contactsList;
 
-    public ContactsManager(ArrayList<Contact> contactsList) {
-        this.contactsList = contactsList;
+    public ContactsManager() {
+        this.contactsList = new ArrayList<>();
     }
 
     public ArrayList<Contact> getContactsList() {
@@ -16,7 +16,7 @@ public class ContactsManager {
         this.contactsList = contactsList;
     }
 
-    private void addContacts(String fName, String lName,String address, int phone, String city, String state, int zip, String email){
+    public void addContacts(String fName, String lName, String address, int phone, String city, String state, int zip, String email) {
         contactsList.add(
                 new Contact(
                         fName,
@@ -33,7 +33,7 @@ public class ContactsManager {
     }
 }
 
-class Contact{
+class Contact {
     private String firstName;
     private String lastName;
     private int phoneNumber;
