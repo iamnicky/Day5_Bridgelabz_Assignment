@@ -1,11 +1,10 @@
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
-public class AddContacts {
+public class ContactsManager {
 
     private ArrayList<Contact> contactsList;
 
-    public AddContacts(ArrayList<Contact> contactsList) {
+    public ContactsManager(ArrayList<Contact> contactsList) {
         this.contactsList = contactsList;
     }
 
