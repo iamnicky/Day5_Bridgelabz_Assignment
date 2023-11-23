@@ -36,6 +36,7 @@ public class AddressBookSystem {
                 System.out.println("Please enter the name you want to edit");
                 String name = sc.nextLine();
                 contactsManager.editContact(name);
+                break;
             case 3:
                 System.out.println("Please enter the name you want to delete");
                 String nameToBeDeleted = sc.nextLine();

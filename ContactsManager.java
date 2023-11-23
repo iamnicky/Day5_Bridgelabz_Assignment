@@ -66,11 +66,12 @@ public class ContactsManager {
                         state,
                         zip
                 ));
-                System.out.println("The contact against name " + fName + " has been updated!");
-            } else {
-                System.out.println("The contact you are looking for is  not present");
+
+                System.out.println("The contact against name "+fName+ " has been updated!");
+                return;
             }
         }
+        System.out.println("The contact you are looking for is  not present");
     }
 
     public void deleteContact(String name) {
